@@ -5,6 +5,7 @@ language: en
 pipeline:
 # This key can be left empty. The pipeline will then be provided from a default configuration during training.
 - name: WhitespaceTokenizer
+  intent_split_symbol: "_"
 - name: RegexFeaturizer
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
@@ -15,6 +16,7 @@ pipeline:
 - name: DIETClassifier
   epochs: 50
 - name: EntitySynonymMapper
+- name: EmbeddingIntentClassifier
 - name: ResponseSelector
   epochs: 50
 # Configuration for Rasa Core.
