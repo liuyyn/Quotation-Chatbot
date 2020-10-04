@@ -91,3 +91,8 @@ actions:
   - utter_ask_bmi
   - utter_ask_children
   - utter_ask_smoker
+  - action_ask_age
+  - action_ask_sex
+  - action_ask_bmi
+  - action_ask_children
+  - action_ask_smoker
