@@ -42,5 +42,9 @@ div.p-3.my-2.rounded {
 div.bubbles {
   height: 500px;
   /* height: 50%; */
-  overflow-y: scroll;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  /* transform: rotate(100deg);
+  direction: rtl; */
 }
