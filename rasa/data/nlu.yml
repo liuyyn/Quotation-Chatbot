@@ -111,16 +111,63 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-#- intent: sex
-#  examples: |
-#    - What is your sexe?
-#    - What is your gender?
-#    - Are you a male or female?
-#    - Are you a boy or a girl?
-#    - Do you identify yourself as a man or a woman?
-#
-#- intent: age
-#  examples: |
-#    - How old are you?
-#    - When were you born?
-#    - What year were you born?
+- regex: age
+  examples: |
+    - [0, 1]\d{2}
+
+- regex: bmi
+  examples: |
+    - \d+.
+
+- synonym: male
+  examples: |
+    - man
+    - Mr.
+    - boy
+    - masculine
+    - men
+    - Sir
+
+- synonym: female
+  examples: |
+    - girl
+    - woman
+    - Mrs.
+    - Ms.
+    - feminin
+    - lady
+
+## intent: faq/why_age
+    - Why do you need my age?
+    - Why is the age relevant?
+    - Why does age come in to play?
+    - Why is age a factor?
+    - Why is age important to you?
+
+## intent faq/why_sex
+    - Why do you need my gender?
+    - Why is gender relevant?
+    - Why does age come in to play?
+    - Why is sex a factor?
+    - Why is sex important to you?
+
+## intent faq/why_bmi
+    - Why do you need my bmi?
+    - Why is bmi relevant?
+    - Why does bmi come in to play?
+    - Why is bmi a factor?
+    - Why is bmi important to you?
+
+## intent faq/why_children
+    - Why do you need to know how many children I have?
+    - Why is the number of children relevant?
+    - Why does the number of children come in to play?
+    - Why is the number of children I have a factor?
+    - Why is the number of children I have important to you?
+
+## intent faq/why_smoker
+    - Why do you need to know if I am a smoker?
+    - Why is smoking relevant?
+    - Why does my smoking habit relevant come in to play?
+    - Why is smoking a factor?
+    - Why is smoking important to you?

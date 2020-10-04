@@ -10,11 +10,11 @@ intents:
   - bot_challenge
 
 entities:
-  - sex
   - age
+  - sex
+  - bmi
   - children
   - smoker
-  - bmi
 
 responses:
   utter_greet:
