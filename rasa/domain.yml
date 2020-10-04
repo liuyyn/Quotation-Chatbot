@@ -8,11 +8,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - answer_age
-  - answer_sex
-  - answer_bmi
-  - answer_children
-  - answer_smoker
+  - informm
   - faq
 
 entities:
@@ -59,17 +55,22 @@ responses:
 
 slots:
   age:
-    type: float
-    ### True for male, false for female
+    type: unfeaturized
+    initial_value: None
   sex:
-    type: bool
+    ### True for male, false for female
+    type: unfeaturized
+    initial_value: None
   bmi:
-    type: float
+    type: unfeaturized
+    initial_value: None
   children:
-    type: float
-    ### True for yes, false for no
+    type: unfeaturized
+    initial_value: None
   smoker:
-    type: bool
+    ### True for yes, false for no
+    type: unfeaturized
+    initial_value: None
 
 
 session_config:
@@ -94,3 +95,22 @@ actions:
   - action_ask_bmi
   - action_ask_children
   - action_ask_smoker
+
+forms:
+- profile_form:
+    age:
+      - type: from_entity
+        entity: age
+    sex:
+      - type: from_entity
+        entity: sex
+    bmi:
+      - type: from_entity
+        entity: bmi
+    children:
+      - type: from_entity
+        entity: children
+    smoker:
+      - type: from_entity
+        entity: smoker
+
