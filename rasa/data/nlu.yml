@@ -110,3 +110,17 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+#- intent: sex
+#  examples: |
+#    - What is your sexe?
+#    - What is your gender?
+#    - Are you a male or female?
+#    - Are you a boy or a girl?
+#    - Do you identify yourself as a man or a woman?
+#
+#- intent: age
+#  examples: |
+#    - How old are you?
+#    - When were you born?
+#    - What year were you born?

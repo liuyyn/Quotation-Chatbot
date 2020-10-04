@@ -9,6 +9,13 @@ intents:
   - mood_unhappy
   - bot_challenge
 
+entities:
+  - sex
+  - age
+  - children
+  - smoker
+  - bmi
+
 responses:
   utter_greet:
   - text: "Hey! How are you?"
