@@ -45,6 +45,4 @@ div.bubbles {
   overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;
-  /* transform: rotate(100deg);
-  direction: rtl; */
 }
