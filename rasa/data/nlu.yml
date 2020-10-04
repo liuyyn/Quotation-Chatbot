@@ -1,5 +1,26 @@
 version: "2.0"
 
+# entities (DIETClassifier)
+  # age (number, integer)
+  # sex (female or male)
+  # bmi (number, float, 1 decimal)
+  # children (number, integer)
+  # smoker (yes or no)
+
+# FAQ/
+  # why_age
+  # why_sex
+  # why_bmi
+  # why_children
+  # why_smoker
+  # confidentiality (can I trust you as a bot)
+  # trolls:
+    # why_bot
+    # free_healthcare
+    # bot_health
+
+
+
 nlu:
 - intent: greet
   examples: |
