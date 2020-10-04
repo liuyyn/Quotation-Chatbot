@@ -11,3 +11,23 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+
+- rule: Activate form
+  steps:
+  - intent: greet
+  - action: profile_form
+  - active_loop: profile_form
+
+
+- rule: Answer FAQ
+  condition:
+  # Condition that form is active.
+  - active_loop: profile_form
+  steps:
+  # This unhappy path handles the case of an intent `faq`.
+  - intent: faq
+  - action: respond_faq
+  # Return to form after handling the `chitchat` intent
+  - action: profile_form
+  - active_loop: profile_form
