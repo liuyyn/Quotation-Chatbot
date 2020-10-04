@@ -13,6 +13,7 @@ intents:
   - answer_bmi
   - answer_children
   - answer_smoker
+  - faq
 
 entities:
   - age_number
@@ -43,6 +44,50 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_ask_age:
+  - text: "How old are you?"
+
+  utter_ask_sex:
+  - text: "What is your gender?"
+
+  utter_ask_bmi:
+  - text: "What is your body mass index?"
+
+  utter_ask_children:
+  - text: "How many children do you have? You should enter 0 if you don't have any."
+
+  utter_ask_smoker:
+  - text: "Have you smoked at least once in the past year?"
+
+slots:
+  age:
+    type: float
+    ### True for male, false for female
+  sex:
+    type: bool
+  bmi:
+    type: float
+  children:
+    type: float
+    ### True for yes, false for no
+  smoker:
+    type: bool
+
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+actions:
+  - respond_faq
+  - utter_great
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - utter_ask_age
+  - utter_ask_sex
+  - utter_ask_bmi
+  - utter_ask_children
+  - utter_ask_smoker
