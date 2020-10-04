@@ -158,16 +158,16 @@ nlu:
     - I am taking care of [3](children) babies.
     - I have [2](children) children studying in elementary school.
 
-- intent: answer_smoke
+- intent: answer_smoker
   examples: |
-    - [No]{"entity": "smoke", "value": "no"}
-    - [Yes]{"entity": "smoke", "value": "yes"}
-    - [Nah]{"entity": "smoke", "value": "no"}, I do not
-    - [Yeah]{"entity": "smoke", "value": "yes"}, I do
-    - [Y]{"entity": "smoke", "value": "yes"}
-    - [Nope]{"entity": "smoke", "value": "no"}
-    - [noo]{"entity": "smoke", "value": "no"}, I don't like to smoke
-    - [Yess]{"entity": "smoke", "value": "no"}, smoking relaxes me
+    - [No]{"entity": "smoker", "value": "no"}
+    - [Yes]{"entity": "smoker", "value": "yes"}
+    - [Nah]{"entity": "smoker", "value": "no"}, I do not
+    - [Yeah]{"entity": "smoker", "value": "yes"}, I do
+    - [Y]{"entity": "smoker", "value": "yes"}
+    - [Nope]{"entity": "smoker", "value": "no"}
+    - [noo]{"entity": "smoker", "value": "no"}, I don't like to smoke
+    - [Yess]{"entity": "smoker", "value": "no"}, smoking relaxes me
 
 - regex: age
   examples: |

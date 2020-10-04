@@ -8,9 +8,16 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - answer_age
+  - answer_sex
+  - answer_bmi
+  - answer_children
+  - answer_smoker
 
 entities:
-  - age
+  - age_number
+  - age_literal
+  - year_born
   - sex
   - bmi
   - children
