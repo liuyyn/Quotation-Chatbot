@@ -60,6 +60,9 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - sure
+    - affirmative
+    - yeah
 
 - intent: deny
   examples: |
@@ -69,6 +72,9 @@ nlu:
     - I don't think so
     - don't like that
     - no way
+    - Nope
+    - Nah
+    - nahhhh
 
 - intent: mood_great
   examples: |
@@ -111,8 +117,36 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-- intent: answer_age
+- intent: thankyou
   examples: |
+  - okay great thanks
+  - thank you
+  - sure thanks
+  - thanks bye
+
+- intent: out_of_scope
+  examples: |
+  - that's not what I want to do
+  - wait stop
+  - you're no help
+  - this is no help at all
+  - how old are you
+  - I want to order a pizza
+  - tell me the weather
+  - this isn't working
+  - I already told you that
+  - don't like that
+  - I don't want to tell you that
+  - none of your business
+  - that's not right
+  - stop asking
+  - nevermind
+  - I want to do something else
+  - I changed my mind
+
+- intent: inform
+  examples: |
+    # age
     - I am [14](age) years old.
     - I am [five](age) years old.
     - I was born in [1990](age).
@@ -126,18 +160,14 @@ nlu:
     - [33](age)
     - [ten](age)
     - [Eleven](age)
-
-- intent: answer_sex
-  examples: |
+    # sex
     - I am a [man]{"entity": "sex", "value": "male"}
     - I'm a [girl]{"entity": "sex", "value": "female"}
     - [M]{"entity": "sex", "value": "male"}
     - [F]{"entity": "sex", "value": "female"}
     - [Male]{"entity": "sex", "value": "male"}
     - [Female]{"entity": "sex", "value": "female"}
-
-- intent: answer_bmi
-  examples: |
+    # bmi
     - My bmi is [40.0](bmi)
     - Bmi = [33.3](bmi)
     - [11.9](bmi)
@@ -145,9 +175,7 @@ nlu:
     - BMi is [12](bmi)
     - I have a bmi of [21.0](bmi)
     - My body mass index is [10.7](bmi)
-
-- intent: answer_children
-  examples: |
+    # children
     - I have [2](children) children.
     - [0](children)
     - I have [6](children) children.
@@ -158,9 +186,7 @@ nlu:
     - I raise [7](children) children by myself.
     - I am taking care of [3](children) babies.
     - I have [2](children) children studying in elementary school.
-
-- intent: answer_smoker
-  examples: |
+    # smoker
     - [No]{"entity": "smoker", "value": "no"}
     - [Yes]{"entity": "smoker", "value": "yes"}
     - [Nah]{"entity": "smoker", "value": "no"}, I do not
