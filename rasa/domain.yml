@@ -16,9 +16,7 @@ intents:
   - faq
 
 entities:
-  - age_number
-  - age_literal
-  - year_born
+  - age
   - sex
   - bmi
   - children

@@ -113,19 +113,19 @@ nlu:
 
 - intent: answer_age
   examples: |
-    - I am [14](age_number) years old.
-    - I am [five](age_literal) years old.
-    - I was born in [1990](year_born).
-    - My birthday is on May 11, [1989](year_born).
-    - My birthday is [2002](year_born)/05/22.
-    - I was born on 01/01/[1987](year_born)
-    - My birth year is [2000](year_born)
-    - I am [60](age_number).
-    - I am almost six(age_literal).
-    - I'm [30](age_number) now.
-    - [33](age_number)
-    - [ten](age_literal)
-    - [Eleven](age_literal)
+    - I am [14](age) years old.
+    - I am [five](age) years old.
+    - I was born in [1990](age).
+    - My birthday is on May 11, [1989](age).
+    - My birthday is [2002](age)/05/22.
+    - I was born on 01/01/[1987](age)
+    - My birth year is [2000](age)
+    - I am [60](age).
+    - I am almost six(age).
+    - I'm [30](age) now.
+    - [33](age)
+    - [ten](age)
+    - [Eleven](age)
 
 - intent: answer_sex
   examples: |
@@ -234,7 +234,7 @@ nlu:
 ## intent faq/why_sex
     - Why do you need my gender?
     - Why is gender relevant?
-    - Why does age come in to play?
+    - Why does gender come in to play?
     - Why is sex a factor?
     - Why is sex important to you?
 
