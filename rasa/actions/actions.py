@@ -27,7 +27,7 @@
 #         return []
 
 
-from typing import Text, List, Dict, Any
+
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType
@@ -35,10 +35,10 @@ from rasa_sdk.executor import CollectingDispatcher
 
 from rasa_sdk.interfaces import Action
 
-from typing import Dict, Text, List, Any
+from rasa_sdk.forms import FormAction
 
+from typing import Any, Text, Dict, List, Union
 
-from typing import Dict, Text, List
 
 
 class AskForAgeAction(Action):
@@ -101,11 +101,16 @@ class ActionGreet(Action):
         return []
 
 
-class ProfileForm(Action):
-    def name(self) -> Text:
+class ProfileForm(FormAction):
+
+    def name(self):
         return "profile_form"
 
-    def run(
+    @staticmethod
+    def required_slots(tracker):
+        return ["age", "sex", "bmi", "children", "smoker"]
+
+    """def run(
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
     ) -> List[EventType]:
         extracted_slots: Dict[Text, Any] = tracker.form_slots_to_validate()
@@ -121,52 +126,43 @@ class ProfileForm(Action):
                 # slot still needs to be filled.
                 # validation_events.append(SlotSet(slot_name, None))
 
-        return validation_events
+        return filled_characteristics
 
     def is_filled(slot_value: Any) -> bool:
         if slot_value == None:
             return False
         else:
             return True
-        # Implementation of the is_filled function.
+        # Implementation of the is_filled function."""
 
 
+    def slot_mappings(self):
+        # type: () -> Dict[Text: Union[Dict, List[Dict]]]
+        """A dictionary to map required slots to
+            - an extracted entity
+            - intent: value pairs
+            - a whole message
+            or a list of them, where a first match will be picked"""
 
-
-
-class ActionSessionStart(Action):
-    def name(self) -> Text:
-        return "action_session_start"
-
-    @staticmethod
-    def fetch_slots(tracker: Tracker) -> List[EventType]:
-        """Collect slots that contain the user's name and phone number."""
-
-        slots = []
-
-        for key in ("name", "phone_number"):
-            value = tracker.get_slot(key)
-            if value is not None:
-                slots.append(SlotSet(key=key, value=value))
-
-        return slots
-
-    async def run(
+        return {"age": self.from_entity(entity="age",
+                                            intent="inform"),
+                "sex": self.from_entity(entity="sex",
+                                            intent="inform"),
+                "bmi": self.from_entity(entity="bmi",
+                                            intent="inform"),
+                "children": self.from_entity(entity="children",
+                                            intent="inform"),
+                "smoker": self.from_entity(entity="smoker",
+                                            intent="inform")
+                }
+    def submit(
         self,
-        output_channel: "OutputChannel",
-        nlg: "NaturalLanguageGenerator",
-        tracker: "DialogueStateTracker",
-        domain: "Domain",
-    ) -> List[Event]:
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict]:
 
-        # the session should begin with a `session_started` event
-        events = [SessionStarted(metadata=self.metadata)]
+        dispatcher.utter_message("Thanks, great job!")
+        return []
 
-        # any slots that should be carried over should come after the
-        # `session_started` event
-        events.extend(self.fetch_slots(tracker))
 
-        # an `action_listen` should be added at the end as a user message follows
-        events.append(ActionExecuted("action_listen"))
-
-        return events
