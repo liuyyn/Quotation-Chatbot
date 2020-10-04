@@ -5,6 +5,7 @@ import { Card, CardTitle } from "reactstrap";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getBotMessage } from "./redux/actions/messageActions";
+import { v4 as uuid } from "uuid";
 
 class Chatbot extends Component {
   static propTypes = {
@@ -14,12 +15,15 @@ class Chatbot extends Component {
 
   render() {
     return (
-      <div>
+      <div className="scroll">
         <Card>
           <CardTitle>Mr Health Quotation</CardTitle>
-          {this.props.messages.messages.map((d) => (
-            <Bubble key={d.message} message={d.message} person={d.person} />
-          ))}
+          <div className="bubbles">
+            {this.props.messages.messages.map((d) => (
+              <Bubble key={uuid()} message={d.message} person={d.person} />
+            ))}
+          </div>
+
           <Text />
         </Card>
       </div>

@@ -6,7 +6,7 @@ html {
 
 body {
   height: 100%;
-  margin: auto;
+  margin-left: 30%;
   align-items: center;
 }
 
@@ -17,7 +17,7 @@ div.user.toast-body {
 div.toast.fade.show {
   /* object-position: 0%;
   right: 0; */
-  width: 700px;
+  /* width: 700px; */
 }
 
 div.card-title {
@@ -30,14 +30,21 @@ div.card-title {
   width: 90%;
 } */
 
-/* div.card {
-  width: 700px;
-} */
+div.card {
+  width: 55%;
+}
 
 form {
   padding: 30px;
 }
 
 div.p-3.my-2.rounded {
-  padding: 30px;
+  /* padding: 30px; */
+  margin: 30px;
+}
+
+div.bubbles {
+  height: 500px;
+  /* height: 50%; */
+  overflow-y: scroll;
 }

@@ -20,3 +20,9 @@ export const getBotMessage = () => (dispatch) => {
     .get("/")
     .then((res) => dispatch({ type: type.GET_BOT_MESSAGE, payload: res.data }));
 };
+
+// export const getBotMessage = (data) => (dispatch) => {
+//   axios
+//     .post("/", data)
+//     .then((res) => dispatch({ type: type.GET_BOT_MESSAGE, payload: res.data }));
+// };

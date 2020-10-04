@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Input } from "reactstrap";
+import { Form, FormGroup, Input } from "reactstrap";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addUserMessage, getBotMessage } from "./redux/actions/messageActions";
@@ -27,7 +27,7 @@ class Text extends Component {
 
     this.props.addUserMessage({ person: "You", message: this.state.message });
 
-    this.props.getBotMessage();
+    this.props.getBotMessage(this.state.message);
   };
 
   render() {
