@@ -5,12 +5,7 @@ function Text() {
     message: "",
   };
 
-  
-  return (
-      <>
-        <
-      </>
-  );
+  return <></>;
 }
 
 export default Text;
