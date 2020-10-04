@@ -28,3 +28,23 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+## why age
+* faq
+  - respond_faq
+
+## why sex
+* faq
+  - respond_faq
+
+## why bmi
+* faq
+  - respond_faq
+
+## why children
+* faq
+  - respond_faq
+
+## why smoker
+* faq
+  - respond_faq
