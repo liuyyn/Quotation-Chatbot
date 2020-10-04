@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Input } from "reactstrap";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { addUserMessage, getBotMessage } from "./redux/actions/messageActions";
 
 class Text extends Component {
   state = {
     message: "",
+  };
+
+  static propTypes = {
+    addUserMessage: PropTypes.func.isRequired,
+    getBotMessage: PropTypes.func.isRequired,
   };
 
   onChange = (e) => {
@@ -12,20 +20,24 @@ class Text extends Component {
     });
   };
 
-  //   onSubmit = (e) => {
-  //     e.preventDefault();
+  onSubmit = (e) => {
+    e.preventDefault();
 
-  //     // this.props.addMessage()
-  //   };
+    e.target.reset();
+
+    this.props.addUserMessage({ person: "You", message: this.state.message });
+
+    this.props.getBotMessage();
+  };
 
   render() {
     return (
       <>
-        {/* <Form onSubmit={this.onSubmit()}> */}
-        <Form>
+        <Form onSubmit={this.onSubmit}>
+          {/* <Form> */}
           <FormGroup>
             <Input placeholder="Ask a question" onChange={this.onChange} />
-            <Button>Send</Button>
+            {/* <Button>Send</Button> */}
           </FormGroup>
         </Form>
       </>
@@ -33,4 +45,10 @@ class Text extends Component {
   }
 }
 
-export default Text;
+const mapStateToProps = (state) => ({
+  messages: state.messages,
+});
+
+export default connect(mapStateToProps, { addUserMessage, getBotMessage })(
+  Text
+);

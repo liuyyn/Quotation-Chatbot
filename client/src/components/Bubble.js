@@ -10,7 +10,7 @@ function Bubble(props) {
     <div>
       <div className="p-3 my-2 rounded">
         <Toast>
-          <ToastHeader>You</ToastHeader>
+          <ToastHeader>{props.person}</ToastHeader>
           <ToastBody className="user">{props.message}</ToastBody>
         </Toast>
       </div>

@@ -14,14 +14,30 @@ div.user.toast-body {
   text-align: right;
 }
 
-/* div.toast.fade.show {
-  object-position: 0%;
-  right: 0;
-  width: 400px;
-} */
+div.toast.fade.show {
+  /* object-position: 0%;
+  right: 0; */
+  width: 700px;
+}
 
 div.card-title {
   padding: 20px;
   margin: 0px;
   border-bottom: 1px solid gainsboro;
+}
+
+/* input.form-control {
+  width: 90%;
+} */
+
+/* div.card {
+  width: 700px;
+} */
+
+form {
+  padding: 30px;
+}
+
+div.p-3.my-2.rounded {
+  padding: 30px;
 }
